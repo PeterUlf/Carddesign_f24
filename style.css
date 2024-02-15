@@ -13,7 +13,6 @@ main {
   display: grid;
   /* skift ud med variabel bredde */
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-auto-rows: auto;
   gap: 20px;
 }
 
@@ -26,9 +25,6 @@ a {
 }
 article {
   display: contents;
-}
-.card-content {
-  margin-bottom: auto;
 }
 
 footer {
@@ -62,7 +58,6 @@ main {
   margin: 0 auto;
 }
 
-a.overlay article:hover {
-  z-index: 100;
+a.overlay:hover {
   background-color: #00000073;
 }

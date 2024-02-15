@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+article img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+main {
+  display: grid;
+  /* skift ud med variabel bredde */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: auto;
+  gap: 20px;
+}
+
+a {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: subgrid; /* her vælger jeg at grid'et skal komme fra min parent */
+  grid-row: span 4; /* hele artiklen fylder 4 rækker af parents rækker  */
+  height: 100%;
+}
+article {
+  display: contents;
+}
+.card-content {
+  margin-bottom: auto;
+}
+
+footer {
+  display: grid;
+  place-items: start;
+}
+footer p {
+  margin-top: auto;
+}
+
+/*  extra styling */
+
+a {
+  box-shadow: 5px 5px 10px 1px #000000;
+  border-radius: 10px;
+}
+
+/* Anvend CSS på alle elementer undtagen det første barn */
+
+article :not(:first-child) {
+  padding: 0 20px;
+}
+
+article :last-child {
+  padding-bottom: 20px;
+}
+
+main {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+a.overlay article:hover {
+  z-index: 100;
+  background-color: #00000073;
+}
